@@ -9,9 +9,9 @@ function App() {
   const [users, setUsers] = useState([]);
 
   const fetchAPI = async() => {
-    const response = await axios.get("http://localhost:5000/api/users")
-    console.log(response.data.users);
-    setUsers(response.data.users)
+    const response = await axios.get("http://127.0.0.1:5000/api/user/get_users")
+    console.log(response.data);
+    setUsers(response.data)
   }
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
           count is {count}
         </button>
         { users.map((user, index) => (
-          <div key={index}>{user}</div>
+          <div key={index}>{user.name} {user.email}</div>
         ))}
       </div>
       <p className="read-the-docs">
