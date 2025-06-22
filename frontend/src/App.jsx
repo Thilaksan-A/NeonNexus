@@ -9,7 +9,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   const fetchAPI = async() => {
-    const response = await axios.get("http://127.0.0.1:5000/api/user/get_users")
+    const response = await axios.get("https://neonnexus.onrender.com/api/user/get_users")
     console.log(response.data);
     setUsers(response.data)
   }
